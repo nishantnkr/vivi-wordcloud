@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-function parseAndCount(text){
+function parseAndCount(text: string){
   const tokens = (text || '').toLowerCase().match(/\b[^\s]+\b/g) || [];
-  const map = {};
+  const map: { [key: string]: number } = {};
   for (const t of tokens){
     const w = t.replace(/[^\w']/g,'').trim();
     if (!w) continue;
