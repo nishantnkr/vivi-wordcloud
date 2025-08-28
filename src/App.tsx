@@ -1,6 +1,6 @@
-import React from 'react'
-import Client from './pages/Client'
-import Signage from './pages/Signage'
+import React from 'react';
+import Client from './pages/Client';
+import Signage from './pages/Signage';
 
 export default function App(){
   const parts = window.location.pathname.split('/').filter(Boolean);
