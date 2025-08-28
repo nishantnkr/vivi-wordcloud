@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-function fontSize(count, maxCount){
+interface Word {
+  word: string;
+  count: number;
+}
+
+function fontSize(count: number, maxCount: number){
   const min = 12, max = 56;
   if (maxCount <= 1) return min;
   const scale = (count - 1) / (maxCount - 1);
@@ -8,10 +13,10 @@ function fontSize(count, maxCount){
 }
 
 export default function Signage(){
-  const [words, setWords] = useState([]);
+  const [words, setWords] = useState<Word[]>([]);
 
   useEffect(()=>{
-    const handler = ev => {
+    const handler = (ev: MessageEvent) => {
       if (ev.data && ev.data.type === 'applet-message' && ev.data.command && ev.data.command.type === 'word-cloud') {
         setWords(ev.data.command.content.words || []);
       }
