@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import Client from './pages/Client';
 import Signage from './pages/Signage';
 
